@@ -13,6 +13,7 @@ describe('queue', () => {
     queue.enqueue(fn2);
     queue.enqueue(fn3);
 
+    expect(queue.isEmpty()).toBeFalsy();
     expect(queue.size).toBe(3);
   });
 
@@ -26,14 +27,22 @@ describe('queue', () => {
     queue.enqueue(fn1);
     queue.enqueue(fn2);
     queue.enqueue(fn3);
+    expect(queue.size).toBe(3);
+    expect(queue.isEmpty()).toBeFalsy();
 
     queue.dequeue()?.();
     expect(fn1).toHaveBeenCalled();
+    expect(queue.size).toBe(2);
+    expect(queue.isEmpty()).toBeFalsy();
 
     queue.dequeue()?.();
     expect(fn2).toHaveBeenCalled();
+    expect(queue.size).toBe(1);
+    expect(queue.isEmpty()).toBeFalsy();
 
     queue.dequeue()?.();
     expect(fn3).toHaveBeenCalled();
+    expect(queue.size).toBe(0);
+    expect(queue.isEmpty()).toBeTruthy();
   });
 });

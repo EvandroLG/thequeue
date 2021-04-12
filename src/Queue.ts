@@ -48,6 +48,7 @@ export class Queue<T = () => void> {
 
     const value = (this.front as QueueNode<T>).value;
     this.front = (this.front as QueueNode<T>).next;
+    this.size = this.size - 1;
 
     return value;
   }
