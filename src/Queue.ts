@@ -1,16 +1,16 @@
-class QueueNode {
-  value: any;
-  next: QueueNode | null;
+class QueueNode<T = () => void> {
+  value: T;
+  next: QueueNode<T> | null;
 
-  constructor(value: any) {
+  constructor(value: T) {
     this.value = value;
     this.next = null;
   }
 }
 
-export class Queue {
-  front: any;
-  back: any;
+export class Queue<T = () => void> {
+  front: QueueNode<T> | null;
+  back: QueueNode<T> | null;
   size: number;
 
   constructor() {
@@ -19,21 +19,26 @@ export class Queue {
     this.size = 0;
   }
 
-  queue(value: any): void {
+  isEmpty(): boolean {
+    return !this.size;
+  }
+
+  queue(value: T): void {
     const node = new QueueNode(value);
     this.size = this.size + 1;
 
     if (!this.size) {
       this.front = node;
       this.back = node;
+
       return;
     }
 
-    this.back.next = node;
+    (this.back as QueueNode<T>).next = node;
     this.back = node;
   }
 
-  dequeue(): any {
+  dequeue(): T | null {
     if (!this.size) {
       return null;
     }
@@ -42,8 +47,8 @@ export class Queue {
       this.back = null;
     }
 
-    const value = this.front.value;
-    this.front = this.front.next;
+    const value = (this.front as QueueNode<T>).value;
+    this.front = (this.front as QueueNode<T>).next;
 
     return value;
   }
