@@ -6,16 +6,16 @@ type TypeReturn = {
 };
 
 export default function jaguar(): TypeReturn {
-  const list = new Queue();
+  const queue = new Queue();
 
   return {
     register(resolver: () => void) {
-      list.queue(resolver);
+      queue.enqueue(resolver);
     },
 
     start() {
-      while (!list.isEmpty()) {
-        const fn = list.dequeue();
+      while (!queue.isEmpty()) {
+        const fn = queue.dequeue();
         fn?.();
       }
     },

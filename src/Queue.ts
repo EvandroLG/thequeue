@@ -23,19 +23,18 @@ export class Queue<T = () => void> {
     return !this.size;
   }
 
-  queue(value: T): void {
+  enqueue(value: T): void {
     const node = new QueueNode(value);
-    this.size = this.size + 1;
 
     if (!this.size) {
       this.front = node;
       this.back = node;
-
-      return;
+    } else {
+      (this.back as QueueNode<T>).next = node;
+      this.back = node;
     }
 
-    (this.back as QueueNode<T>).next = node;
-    this.back = node;
+    this.size = this.size + 1;
   }
 
   dequeue(): T | null {
