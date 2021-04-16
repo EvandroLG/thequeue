@@ -1,5 +1,7 @@
 import thequeue from '../src/';
 
+jest.useFakeTimers();
+
 describe('thequeue', () => {
   it('should register resolvers and run them by calling the `start` method', () => {
     const q = thequeue();
@@ -12,6 +14,7 @@ describe('thequeue', () => {
     q.register(fn3);
 
     q.start();
+    jest.advanceTimersByTime(5);
 
     expect(fn1).toHaveBeenCalled();
     expect(fn2).toHaveBeenCalled();
@@ -25,6 +28,7 @@ describe('thequeue', () => {
 
     const q = thequeue([fn1, fn2, fn3]);
     q.start();
+    jest.advanceTimersByTime(5);
 
     expect(fn1).toHaveBeenCalled();
     expect(fn2).toHaveBeenCalled();

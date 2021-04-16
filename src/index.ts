@@ -22,7 +22,7 @@ export default function thequeue(arr?: Array<() => void>): ReturnType {
     start() {
       while (!queue.isEmpty()) {
         const fn = queue.dequeue();
-        fn?.();
+        setTimeout(() => fn?.(), 1);
       }
     },
   };
