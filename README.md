@@ -36,7 +36,7 @@ const fn3 = () => console.log('fn3');
 q.register(fn3);
 
 q.start();
-// Calling the `start` method, the function will be called in the order in which they were registered.
+// the functions will be called in the order in which they were added to the queue.
 ```
 
 In addition to being simple to use, `thequeue` was also designed with performance in mind and all registered functions are in a LinkedList Queue. This means that the functions are registered in constant time and are processed (when the `start` function is invoked) in linear time, without adding any extra space in memory.
