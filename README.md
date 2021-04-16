@@ -7,13 +7,13 @@ Easy way to queue delayed callbacks. Designed to be used on both client and serv
 To install `thequeue`, execute:
 
 ```sh
-$ npm install thequeue
+$ npm install @evandrolg/thequeue
 ```
 
 or
 
 ```sh
-$ yarn add thequeue
+$ yarn add @evandrolg/thequeue
 ```
 
 ## Usage

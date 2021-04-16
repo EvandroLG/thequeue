@@ -1,5 +1,5 @@
 {
-  "name": "thequeue",
+  "name": "@evandrolg/thequeue",
   "version": "1.0.0",
   "description": "Easy way to queue delayed callbacks.",
   "main": "dist/index.js",
