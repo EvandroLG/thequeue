@@ -1,7 +1,7 @@
 {
   "name": "thequeue",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easy way to queue delayed callbacks.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -24,6 +24,8 @@
   },
   "keywords": [
     "queue",
+    "linked-list",
+    "asynchronous",
     "callback",
     "performance"
   ]
