@@ -1,12 +1,18 @@
 import { Queue } from './Queue';
 
-type TypeReturn = {
+type ReturnType = {
   register: (reslver: () => void) => void;
   start: () => void;
 };
 
-export default function jaguar(): TypeReturn {
+export default function thequeue(arr?: Array<() => void>): ReturnType {
   const queue = new Queue();
+
+  if (arr?.length) {
+    for (const item of arr) {
+      queue.enqueue(item);
+    }
+  }
 
   return {
     register(resolver: () => void) {
