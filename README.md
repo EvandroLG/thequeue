@@ -1,4 +1,4 @@
-# thequeue &middot; [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+# thequeue &middot; [![BuildStatus](https://travis-ci.org/EvandroLG/thequeue.svg?branch=master)](https://travis-ci.org/EvandroLG/thequeue) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 Easy way to queue delayed callbacks. Designed to be used on both client and server-side.
 
@@ -39,7 +39,7 @@ q.start();
 // the functions will be called in the order in which they were added to the queue.
 ```
 
-`thequeue` was also designed with performance in mind and all registered functions are in a Queue that was implemented using a LinkedList. This means that the functions are registered in constant time and are processed (when the `start` method is invoked) in linear time, without adding any extra space in memory.
+`thequeue` was also developed with performance in mind and all registered functions are in a Queue that was implemented using a LinkedList. This means that the functions are registered in constant time and are processed (when the `start` method is invoked) in linear time, without adding any extra space in memory.
 
 ## TODO
 
