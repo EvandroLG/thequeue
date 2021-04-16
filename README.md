@@ -21,7 +21,7 @@ $ yarn add thequeue
 `thequeue` was designed to call functions that need to be invoked at a given time (e.g tracking logics that are collected during the user's navigation and can be performed later at once).
 Its api is quite simple, as the example below shows:
 
-```
+```js
 import thequeue from 'thequeue';
 
 const q = thequeue();
