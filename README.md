@@ -1,6 +1,6 @@
 # thequeue &middot; [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-Easy way to execute a callback queue.
+Easy way to queue delayed callbacks.
 
 ## Install
 
